@@ -16,9 +16,9 @@ return new class extends Migration
         $table->string('nama_lengkap');
         $table->enum('jenis_kelamin', ['Laki-laki', 'Perempuan']);
         $table->string('no_hp');
-        $table->string('tujuan_instansi');
         $table->text('maksud_tujuan');
         $table->text('alamat');
+        $table->foreignId('id_instansi')->constrained('tb_instansi');
         $table->timestamps();
     });
 }

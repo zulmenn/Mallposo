@@ -10,7 +10,19 @@ class KunjunganExport implements FromCollection, WithHeadings
 {
     public function collection()
     {
-        return Kunjungan::select('nama_lengkap', 'jenis_kelamin', 'no_hp', 'tujuan_instansi', 'maksud_tujuan', 'alamat', 'created_at')->get();
+        return Kunjungan::with('instansi')
+            ->get()
+            ->map(function ($item) {
+                return [
+                    'nama_lengkap'   => $item->nama_lengkap,
+                    'jenis_kelamin'  => $item->jenis_kelamin,
+                    'no_hp'          => $item->no_hp,
+                    'instansi'       => $item->instansi->nama_instansi ?? '-',
+                    'maksud_tujuan'  => $item->maksud_tujuan,
+                    'alamat'         => $item->alamat,
+                    'tanggal'        => $item->created_at->format('d-m-Y H:i'),
+                ];
+            });
     }
 
     public function headings(): array
@@ -26,4 +38,3 @@ class KunjunganExport implements FromCollection, WithHeadings
         ];
     }
 }
-

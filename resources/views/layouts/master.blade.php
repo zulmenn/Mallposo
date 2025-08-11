@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Mall Pelayanan Publik</title>
+    <title>Mal Pelayanan Publik</title>
     <link rel="icon" href="{{asset ('assets/img/Lambang_Kabupaten_Poso.png')}}">
     {{-- <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' /> --}}
     @include('layouts.style')
@@ -39,4 +39,4 @@
 
 </body>
 
-</html>  
+</html>

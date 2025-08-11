@@ -8,14 +8,18 @@ use Illuminate\Database\Eloquent\Model;
 class Kunjungan extends Model
 {
     use HasFactory;
+
     protected $fillable = [
-    'nama_lengkap',
-    'jenis_kelamin',
-    'no_hp',
-    'tujuan_instansi',
-    'maksud_tujuan',
-    'alamat',
-];
+        'id_instansi',
+        'nama_lengkap',
+        'jenis_kelamin',
+        'no_hp',
+        'maksud_tujuan',
+        'alamat',
+    ];
 
+    public function instansi()
+    {
+        return $this->belongsTo(InstansiModel::class, 'id_instansi');
+    }
 }
-

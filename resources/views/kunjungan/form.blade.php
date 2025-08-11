@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Formulir Pendaftaran Tamu</title>
+    <title>Mal Pelayanan Publik Kab. Poso</title>
     <link rel="icon" href="{{ asset('assets/img/Lambang_Kabupaten_Poso.png') }}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
@@ -12,7 +12,7 @@
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
-            background-image: url('{{ asset('assets/img/Portal Buku Tamu ku.jpg') }}');
+            background-image: url('{{ asset('assets/img/Portal kunjungan.jpg') }}');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -114,13 +114,13 @@
                         <div class="alert alert-success">{{ session('success') }}</div>
                     @endif
 
-                    <h4 class="mb-4 text-center ">Formulir Pendaftaran</h4>
+                    <h4 class="mb-4 text-center ">SITAMU</h4>
 
                     <form action="{{ route('kunjungan.store') }}" method="POST">
                         @csrf
                         <div class="mb-3">
                             <label>Nama Lengkap</label>
-                            <input type="text" name="nama_lengkap" class="form-control" required>
+                            <input type="text" name="nama_lengkap" id="nama_lengkap" class="form-control" required>
                         </div>
 
                         <div class="mb-3">
@@ -141,16 +141,12 @@
                         </div>
 
                         <div class="mb-3">
-                            <label>Tujuan Instansi</label>
-                            <select name="tujuan_instansi" class="form-control" required>
+                            <label>Nama Instansi</label>
+                            <select name="id_instansi" id="id_instansi" class="form-control" required>
                                 <option value="">-- Pilih Instansi --</option>
-                                <option>Dukcapil</option>
-                                <option>PTSP</option>
-                                <option>Dipenda</option>
-                                <option>Dinas PUPR</option>
-                                <option>Dinas Nakertrans</option>
-                                <option>PT. Taspen</option>
-                                <option>BPOM</option>
+                                @foreach($instansis as $instansi)
+                                    <option value="{{ $instansi->id }}">{{ $instansi->nama_instansi }}</option>
+                                @endforeach
                             </select>
                         </div>
 

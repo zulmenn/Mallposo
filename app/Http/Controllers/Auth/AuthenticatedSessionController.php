@@ -29,7 +29,14 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
-        return redirect()->intended(RouteServiceProvider::HOME);
+        $role = Auth::user()->role;
+        if ($role === 'Admin') {
+            return redirect()->route('admin.pengaduan.index');
+        } elseif ($role === 'superAdmin') {
+            return redirect()->route('dashboard');
+        } else {
+            return redirect()->route('frontend.news');
+        }
     }
 
     /**

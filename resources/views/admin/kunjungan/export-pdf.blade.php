@@ -35,7 +35,7 @@
                 <td>{{ $d->nama_lengkap }}</td>
                 <td>{{ $d->jenis_kelamin }}</td>
                 <td>{{ $d->no_hp }}</td>
-                <td>{{ $d->tujuan_instansi }}</td>
+                <td>{{ $d->instansi->nama_instansi ?? '-' }}</td>
                 <td>{{ $d->maksud_tujuan }}</td>
                 <td>{{ $d->alamat }}</td>
                 <td>{{ $d->created_at->format('d-m-Y H:i') }}</td>

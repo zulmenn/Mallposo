@@ -40,7 +40,7 @@
     <!-- Welcome Section -->
     <div class="d-flex justify-content-between align-items-start mt-4">
         <div>
-            <h2 class="fw-bold" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Selamat datang di Website Pengelolaan Data Tamu</h2>
+            <h2 class="fw-bold" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Selamat datang di Website DPMPTSP Kab. Poso</h2>
             <p style="font-size: large;">Aplikasi ini digunakan untuk mencatat dan memantau kunjungan masyarakat ke instansi-instansi yang tergabung dalam Mal Pelayanan Publik Kabupaten Poso.</p>
         </div>
         <div class="ml-3">
