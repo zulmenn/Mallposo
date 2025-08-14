@@ -10,7 +10,7 @@ class InstansiController extends Controller
     
     public function index()
     {
-        $instansi = instansiModel::all();
+        $instansi = InstansiModel::all();
         return view('instansi.index', compact('instansi'));
     }
 
