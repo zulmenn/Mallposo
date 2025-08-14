@@ -12,7 +12,7 @@
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
-            background-image: url('{{ asset('assets/img/Portal Pengaduan.jpg') }}');
+            background-image: url('{{ asset('assets/img/Portal_Pengaduan.jpg') }}');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
