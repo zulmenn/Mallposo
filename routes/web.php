@@ -105,7 +105,7 @@ Route::middleware(['auth', 'web'])->group(function () {
         Route::get('/edit/{id}', [InformasiPublikController::class, 'edit'])->name('edit'); // Form edit
         Route::put('/update/{id}', [InformasiPublikController::class, 'update'])->name('update'); // Simpan perubahan
         Route::delete('/{id}', [InformasiPublikController::class, 'destroy'])->name('destroy'); // Hapus data
-    })->middleware('checkRole:superAdmin');
+    });
 });
 
 require __DIR__ . '/auth.php';
